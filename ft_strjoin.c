@@ -1,33 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 10:31:03 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/06 12:40:57 by mozahnou         ###   ########.fr       */
+/*   Created: 2025/02/06 12:01:08 by mozahnou          #+#    #+#             */
+/*   Updated: 2025/02/06 12:12:58 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long ft_atoi(char *str)
+int ft_strlen(char *str)
 {
-	long i = 0;
-	long res = 0;
-	long sig = 1;
-	if(str[i] == '-' || str[i] == '-')
-	{
-		if(str[i] == '-')
-			sig *= -1;
+	int i;
+
+	i = 0;
+	while(str[i])
 		i++;
-	}
-	while(str[i] >= '0' && str[i] <= '9')
-	{
-		res *= 10;
-		res += str[i] - 48;
-		i++;
-	}
-	return (res * sig);
+	return (i);
+}
+
+char	*ft_strjoin(char *s1, char *s2)
+{
+	size_t	i;
+	size_t	j;
+	size_t	m;
+	char	*ptr;
+
+	if (!s1 || !s2)
+		return (NULL);
+	i = 0;
+	j = 0;
+	m = 0;
+	ptr = malloc(ft_strlen(s1) + ft_strlen(s2) + 3);
+	if (!ptr)
+		return (NULL);
+	while (s1[i])
+		ptr[m++] = s1[i++];
+	ptr[m] = ' ';
+	m++;
+	while (s2[j])
+		ptr[m++] = s2[j++];
+	ptr[m] = ' ';
+	ptr[m + 1] = '\0';
+	return (ptr);
 }

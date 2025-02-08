@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   rotate_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 10:31:03 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/06 12:40:57 by mozahnou         ###   ########.fr       */
+/*   Created: 2025/02/06 13:21:16 by mozahnou          #+#    #+#             */
+/*   Updated: 2025/02/07 21:20:17 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long ft_atoi(char *str)
+void	swap_a(t_list **lst)
 {
-	long i = 0;
-	long res = 0;
-	long sig = 1;
-	if(str[i] == '-' || str[i] == '-')
-	{
-		if(str[i] == '-')
-			sig *= -1;
-		i++;
-	}
-	while(str[i] >= '0' && str[i] <= '9')
-	{
-		res *= 10;
-		res += str[i] - 48;
-		i++;
-	}
-	return (res * sig);
+	
 }

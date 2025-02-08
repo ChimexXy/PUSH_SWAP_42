@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   stack_a.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 10:31:03 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/06 12:40:57 by mozahnou         ###   ########.fr       */
+/*   Created: 2025/02/06 13:12:35 by mozahnou          #+#    #+#             */
+/*   Updated: 2025/02/07 23:17:48 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long ft_atoi(char *str)
+t_list *stack_a(t_list *head)
 {
-	long i = 0;
-	long res = 0;
-	long sig = 1;
-	if(str[i] == '-' || str[i] == '-')
-	{
-		if(str[i] == '-')
-			sig *= -1;
-		i++;
-	}
-	while(str[i] >= '0' && str[i] <= '9')
-	{
-		res *= 10;
-		res += str[i] - 48;
-		i++;
-	}
-	return (res * sig);
+	// printList(head);
+	return (head);
 }

@@ -1,33 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   utils_swap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 10:31:03 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/06 12:40:57 by mozahnou         ###   ########.fr       */
+/*   Created: 2025/02/07 21:16:32 by mozahnou          #+#    #+#             */
+/*   Updated: 2025/02/07 23:13:47 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long ft_atoi(char *str)
+void swap_fun(t_list **lst)
 {
-	long i = 0;
-	long res = 0;
-	long sig = 1;
-	if(str[i] == '-' || str[i] == '-')
+	t_list *node;
+	int tmp;
+
+	if(!lst)
+		return;
+	node = *lst;
+	tmp = 0;
+	if(node && node->next)
 	{
-		if(str[i] == '-')
-			sig *= -1;
-		i++;
+		tmp = node->content;
+		node->content = node->next->content;
+		node->next->content = tmp;
 	}
-	while(str[i] >= '0' && str[i] <= '9')
-	{
-		res *= 10;
-		res += str[i] - 48;
-		i++;
-	}
-	return (res * sig);
+	else
+		return;
+}
+
+void swap_a(t_list **stack_a)
+{
+	swap_fun(stack_a);
+	write(1, "sa\n", 3);
+}
+
+void swap_b(t_list **stack_b)
+{
+	swap_fun(stack_b);
+	write(1, "sb\n", 3);
 }

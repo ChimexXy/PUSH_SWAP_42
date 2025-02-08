@@ -6,89 +6,55 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:33:17 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/02 11:42:19 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/07 23:17:10 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_strcmp(char *str1, char *str2)
+void printList(t_list *head) 
 {
-	int i = 0;
-	while(str1[i])
-	{
-		if(str1[i] != str2[i])
-			return(1);
-		i++;
-	}
-	return(0);
+    t_list *temp = head; 
+
+	if(!head)
+		return;
+    while (temp != NULL) 
+	{  
+		printf("-> %d \n", temp->content);
+        temp = temp->next; 
+    }
 }
 
-int is_digit(char c)
-{
-	if(c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-int is_sign(char c, char c1)
-{
-	if((c == '-' && c1 != '-') || (c == '+' && c1 != '+'))
-		return (1);
-	return (0);
-}
-
-int ft_check(char *str)
-{
-	int i = 0;
-	
-	if(!str[i])
-		return (0);
-	while(str[i])
-	{
-		if(str[i] == 32 || is_sign(str[i], str[i + 1]))
-			i++;
-		else if(!is_digit(str[i]))
-		{
-			write(2, "Error\n", 6);
-			return 0;
-		}
-		else
-			i++;
-	}
-	return 1;
-}
-
-int *ft_return_num(char *str)
+t_list *ft_all_use(int ac,char **str)
 {
 	int i;
-	int cnt;
-	int *tab;
-	char **ret;
+	char *s;
+	t_list *head;
 
-	i = 0;
-	ret = ft_split(str);
-	cnt = ft_count_word(str);
-	while(i < cnt)
+	i = 1;
+	s = "";
+	while(i < ac)
 	{
-		tab[i] = ft_atoi(ret[i]);
+		s = ft_strjoin(s, str[i]);
 		i++;
 	}
-	return(tab);
+	head = ft_ret_lst(s);
+	if(!ft_check(s) || !check_double(head))
+		return 0;
+	return (head);
+		
 }
 
 int main(int ac, char *av[])
 {
-	int j = 1;
-	char **s = ft_split(av[j]);
-	while(j < ac)
+	t_list *head;
+
+	head = ft_all_use(ac, av);
+	if(head == 0)
 	{
-		if(ft_check(av[j]) == 1)
-		{
-			printf("%s", s[1]);
-		}
-		else
-			return 0;
-		j++;
+		free(head);
+		exit(1);
 	}
+	stack_a(head);
 
 }

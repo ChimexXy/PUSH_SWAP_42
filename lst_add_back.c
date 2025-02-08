@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   lst_add_back.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 10:31:03 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/06 12:40:57 by mozahnou         ###   ########.fr       */
+/*   Created: 2025/02/06 12:18:59 by mozahnou          #+#    #+#             */
+/*   Updated: 2025/02/06 12:20:27 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long ft_atoi(char *str)
+void	lst_add_back(t_list **lst, t_list *new)
 {
-	long i = 0;
-	long res = 0;
-	long sig = 1;
-	if(str[i] == '-' || str[i] == '-')
+	t_list	*last;
+
+	if (!*lst)
 	{
-		if(str[i] == '-')
-			sig *= -1;
-		i++;
+		*lst = new;
+		return ;
 	}
-	while(str[i] >= '0' && str[i] <= '9')
-	{
-		res *= 10;
-		res += str[i] - 48;
-		i++;
-	}
-	return (res * sig);
+	last = *lst;
+	while (last->next != NULL)
+		last = last->next;
+	last->next = new;
 }

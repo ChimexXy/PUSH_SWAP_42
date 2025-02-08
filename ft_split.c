@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 19:02:26 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/02 11:19:57 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/07 18:17:25 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,15 +68,6 @@ char **ft_split(char *str)
 		ret[cnt] = ft_substr(str, start, i);
 		cnt++;
 	}
-	ret[cnt] = "\0";
+	ret[cnt] = NULL;
 	return (ret);
 }
-
-// int main()
-// {
-// 	char *str = "hello world";
-// 	char **res = ft_split(str);
-// 	printf("here--->>\n");
-// 	printf("%s", res[0]);
-	
-// }
