@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_a.c                                          :+:      :+:    :+:   */
+/*   lst_add_front.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 13:12:35 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/11 02:34:23 by mozahnou         ###   ########.fr       */
+/*   Created: 2025/02/10 23:02:04 by mozahnou          #+#    #+#             */
+/*   Updated: 2025/02/10 23:07:40 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list *stack_a(t_list *head)
+void lst_add_front(t_list **lst, t_list *new)
 {
-	return (head);
+	if(!lst || !new)
+		return; 
+	new->next = *lst;
+	*lst = new;
 }

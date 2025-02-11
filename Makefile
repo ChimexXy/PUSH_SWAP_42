@@ -1,7 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRC = push_swap.c ft_split.c ft_atoi.c lst_new_node.c stack_a.c  utils_swap.c\
-		ft_strjoin.c ft_ret_lst.c check_erro.c lst_add_back.c
+		ft_strjoin.c ft_ret_lst.c check_erro.c lst_add_back.c rotate_utils.c lst_add_front.c
 
 OBJ = $(SRC:.c=.o)  
 NAME = push_swap.a
