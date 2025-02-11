@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:33:17 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/11 02:33:56 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/11 05:11:59 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,18 @@ t_list *ft_all_use(int ac,char **str)
 
 int main(int ac, char *av[])
 {
-	t_list *head;
+	t_list *stack_a;
+	// t_list *stack_b;
 	
-	head = ft_all_use(ac, av);
-	if(head == 0)
+	stack_a = ft_all_use(ac, av);
+	// stack_b = NULL;
+	if(stack_a == 0)
 	{
-		free(head);
-		exit(1);
+		free(stack_a);
+		exit (1);
 	}
-	rotate_b(&head);
-	printList(head);
+	swap_a(&stack_a );
+	printList(stack_a);
 	// stack_a(head);
 
 }

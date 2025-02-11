@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 15:18:54 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/11 02:32:30 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/11 05:04:57 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ t_list *lst_new_node(int content);
 t_list *ft_ret_lst(char *str);
 int ft_strlen(char *str);
 char	*ft_strjoin(char *s1, char *s2);
-t_list *stack_a(t_list *head);
 void printList(t_list *head);
 void swap_fun(t_list **lst);
 void swap_a(t_list **lst);
@@ -46,5 +45,6 @@ void rotate_a(t_list **stack_a);
 void rotate_b(t_list **stack_b);
 void rotate_a_b(t_list **stack_a, t_list **stack_b);
 void lst_add_front(t_list **lst, t_list *new);
+void reverse_rotate_a(t_list **stack_a);
 
 #endif
