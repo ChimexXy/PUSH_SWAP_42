@@ -6,20 +6,20 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 21:16:32 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/07 23:13:47 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/11 06:13:50 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swap_fun(t_list **lst)
+void swap_fun(t_list **list)
 {
 	t_list *node;
 	int tmp;
 
-	if(!lst)
+	if(!list)
 		return;
-	node = *lst;
+	node = *list;
 	tmp = 0;
 	if(node && node->next)
 	{
@@ -41,4 +41,11 @@ void swap_b(t_list **stack_b)
 {
 	swap_fun(stack_b);
 	write(1, "sb\n", 3);
+}
+
+void swap_a_b(t_list **stack_a, t_list **stack_b)
+{
+	swap_fun(stack_a);
+	swap_fun(stack_b);
+	write(1, "ss\n", 3);
 }

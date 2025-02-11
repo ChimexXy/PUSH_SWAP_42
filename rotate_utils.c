@@ -6,40 +6,40 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 13:21:16 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/11 03:46:44 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/11 06:12:11 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void rotate_a(t_list **stack_a)
+void rotate_fun(t_list **list)
 {
     t_list *tmp;
 
-    if (*stack_a == NULL || (*stack_a)->next == NULL)
+    if (*list == NULL || (*list)->next == NULL)
         return;
 
-    tmp = *stack_a;
-    *stack_a = (*stack_a)->next;
-	lst_add_back(stack_a, tmp);
+    tmp = *list;
+    *list = (*list)->next;
+	lst_add_back(list, tmp);
 	tmp->next = NULL;
+}
+
+void rotate_a(t_list **stack_a)
+{
+	rotate_fun(stack_a);
+	write(1, "ra\n", 3);
 }
 
 void rotate_b(t_list **stack_b)
 {
-    t_list *tmp;
-
-    if (*stack_b == NULL || (*stack_b)->next == NULL)
-        return;
-
-    tmp = *stack_b;
-    *stack_b = (*stack_b)->next;
-	lst_add_back(stack_b, tmp);
-	tmp->next = NULL;
+	rotate_fun(stack_b);
+	write(1, "rb\n", 3);
 }
 
 void rotate_a_b(t_list **stack_a, t_list **stack_b)
 {
-    rotate_a(stack_a);
-    rotate_b(stack_b);
+    rotate_fun(stack_a);
+    rotate_fun(stack_b);
+	write(1, "rr\n", 3);
 }
