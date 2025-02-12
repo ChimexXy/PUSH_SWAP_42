@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 05:57:14 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/12 09:19:38 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:24:20 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,47 +37,74 @@ void sort_2_num(t_list **list)
 
 void sort_3_num(t_list **list)
 {
-	t_list *head;
-
-	head = *list;
-	if (head->content > head->next->content)
-		swap_a(&head);
-	if(head->next->content > head->next->next->content)
+	if ((*list)->content > (*list)->next->content)
+		swap_a(list);
+	if((*list)->next->content > (*list)->next->next->content)
 	{
-		rotate_a(&head);
-		swap_a(&head);
-		reverse_rotate_a(&head);
+		rotate_a(list);
+		swap_a(list);
+		reverse_rotate_a(list);
 	}
-	if(head->content > head->next->content)
-		swap_a(&head);
+	if((*list)->content > (*list)->next->content)
+		swap_a(list);
 		
 }
 
 void sort_4_num(t_list **list)
 {
-	t_list *head;
 	t_list *tmp;
 
-	head = *list;
-	if (is_sorted(head) == 1)
+	if (is_sorted(*list) == 1)
 		return;
 	tmp = NULL;
-	push_b(&head, &tmp);
-	sort_3_num(&head);
-	push_a(&head, &tmp);
-	if((head->content > head->next->content) && (head->content < head->next->next->content))
-		swap_a(&head);
-	if((head->content > head->next->content) && (head->content > head->next->next->content)
-		&& (head->content > head->next->next->next->content))
-		rotate_a(&head);
-	if((head->content > head->next->content) 
-		&& (head->content > head->next->next->content)
-			&& (head->content < head->next->next->next->content))
+	push_b(list, &tmp);
+	sort_3_num(list);
+	push_a(list, &tmp);
+	if(((*list)->content > (*list)->next->content) && ((*list)->content < (*list)->next->next->content))
+		swap_a(list);
+	if ((*list)->content > (*list)->next->next->next->content)
+		rotate_a(list); 
+	if (((*list)->content > (*list)->next->next->content) 
+		&& ((*list)->content < (*list)->next->next->next->content))
 	{
-		reverse_rotate_a(&head);
-		swap_a(&head);
-		rotate_a(&head);
-		rotate_a(&head);
+		reverse_rotate_a(list);
+		swap_a(list);
+		rotate_a(list);
+		rotate_a(list); 
 	}
-	// printList(head);
+	// printList((*list));
+}
+
+void sort_5_num(t_list **list)
+{
+	t_list *tmp;
+
+	if(is_sorted(*list) == 1)
+		return;
+	tmp = NULL;
+	push_b(list, &tmp);
+	sort_4_num(list);
+	push_a(list, &tmp);
+	if(((*list)->content > (*list)->next->content) && ((*list)->content < (*list)->next->next->content))
+		swap_a(list);
+	if ((*list)->content > (*list)->next->next->next->content)
+		rotate_a(list); 
+	if (((*list)->content > (*list)->next->next->next->content)
+		&& ((*list)->content < (*list)->next->next->next->next->content))
+	{
+		rotate_a(list);
+		push_b(list, &tmp);
+		push_b(list, &tmp);
+		reverse_rotate_a(list);
+		push_a(list, &tmp);
+		push_a(list, &tmp);
+	}
+	if (((*list)->content > (*list)->next->next->next->content)
+		&& ((*list)->content < (*list)->next->next->next->next->content))
+	{
+		reverse_rotate_a(list);
+		swap_a(list);
+		rotate_a(list);
+		rotate_a(list);
+	}
 }
