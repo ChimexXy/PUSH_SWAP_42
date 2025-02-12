@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 13:21:16 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/11 06:12:11 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/12 09:20:36 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void rotate_fun(t_list **list)
 {
     t_list *tmp;
 
-    if (*list == NULL || (*list)->next == NULL)
-        return;
+    // if (*list == NULL || (*list)->next == NULL)
+    //     return;
 
     tmp = *list;
     *list = (*list)->next;

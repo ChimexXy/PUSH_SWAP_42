@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:33:17 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/11 05:42:51 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/11 09:53:42 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ int main(int ac, char *av[])
 		free(stack_a);
 		exit (1);
 	}
+	// rotate_a(&stack_a);
+	// printList(stack_a);
 	take_list(&stack_a);
 }
