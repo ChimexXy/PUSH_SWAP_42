@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 05:57:14 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/12 16:24:20 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/12 20:49:53 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,10 @@ void sort_5_num(t_list **list)
 	push_a(list, &tmp);
 	if(((*list)->content > (*list)->next->content) && ((*list)->content < (*list)->next->next->content))
 		swap_a(list);
-	if ((*list)->content > (*list)->next->next->next->content)
+	else if ((*list)->content > (*list)->next->next->next->next->content)
 		rotate_a(list); 
-	if (((*list)->content > (*list)->next->next->next->content)
-		&& ((*list)->content < (*list)->next->next->next->next->content))
+	if (((*list)->content > (*list)->next->next->content)
+		&& ((*list)->content < (*list)->next->next->next->content))
 	{
 		rotate_a(list);
 		push_b(list, &tmp);
