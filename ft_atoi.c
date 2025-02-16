@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 10:31:03 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/06 12:40:57 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/16 21:50:49 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ long ft_atoi(char *str)
 	long i = 0;
 	long res = 0;
 	long sig = 1;
-	if(str[i] == '-' || str[i] == '-')
+	if(str[i] == '-' || str[i] == '+')
 	{
 		if(str[i] == '-')
 			sig *= -1;

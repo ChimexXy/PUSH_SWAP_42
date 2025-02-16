@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 11:59:34 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/10 21:32:51 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/16 21:49:51 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ int ft_check(char *str)
 	{
 		if(str[i] == 32 ||is_sign(str[i], str[i + 1]))
 			i++;
-		else if(!is_digit(str[i]))
+		else if(!is_digit(str[i]) || (is_digit(str[i]) && str[i + 1] == '-')
+			|| (is_digit(str[i]) && str[i + 1] == '+'))
 		{
 			write(2, "Error\n", 6);
 			exit (1);

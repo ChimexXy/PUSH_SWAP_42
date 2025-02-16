@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 15:18:54 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/16 17:25:32 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/16 21:44:00 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ int lst_count(t_list *list);
 void sort_2_num(t_list **list);
 void sort_3_num(t_list **list);
 void sort_4_num(t_list **list, t_list *stack_b);
-void sort_5_num(t_list **list);
+void sort_5_num(t_list **list, t_list *stack_b);
 
 #endif
