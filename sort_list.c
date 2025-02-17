@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 05:57:14 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/16 21:44:59 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/16 22:44:52 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ void sort_5_num(t_list **stack_a, t_list *stack_b)
 	push_b(stack_a, &stack_b);
 	sort_4_num(stack_a, stack_b);
 	push_a(stack_a, &stack_b);
-	if(((*stack_a)->content > (*stack_a)->next->content) && ((*stack_a)->content < (*stack_a)->next->next->content))
+	if(((*stack_a)->content > (*stack_a)->next->content) 
+		&& ((*stack_a)->content < (*stack_a)->next->next->content))
 		swap_a(stack_a);
 	else if ((*stack_a)->content > (*stack_a)->next->next->next->next->content)
 		rotate_a(stack_a); 

@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 15:18:54 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/16 21:44:00 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/17 01:46:37 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 
 typedef struct s_list{
 	int content;
-	// int index;
 	struct s_list *next;
 }	t_list;
 
@@ -60,5 +59,6 @@ void sort_2_num(t_list **list);
 void sort_3_num(t_list **list);
 void sort_4_num(t_list **list, t_list *stack_b);
 void sort_5_num(t_list **list, t_list *stack_b);
+void radix_sort(t_list **stack_a, t_list *stack_b);
 
 #endif

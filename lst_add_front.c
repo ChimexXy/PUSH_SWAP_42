@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 23:02:04 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/11 11:51:50 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/17 01:47:37 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void lst_add_front(t_list **lst, t_list *new)
 		new->next = *lst;
 		*lst = new;
 	}
+	
 }

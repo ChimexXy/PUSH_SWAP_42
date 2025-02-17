@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 05:28:12 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/16 21:43:48 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/17 01:46:22 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void take_list(t_list **stack_a)
 		sort_4_num(stack_a, stack_b);
 	if(count == 5)
 		sort_5_num(stack_a, stack_b);
-	// else
-	// 	sort_num(stack_a);
+	else if (count > 5)
+		radix_sort(stack_a, stack_b);
 	printList(*stack_a);
 }
