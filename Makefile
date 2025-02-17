@@ -1,24 +1,26 @@
-CC = cc
+NAME = push_swap
 CFLAGS = -Wall -Wextra -Werror
 SRC = push_swap.c ft_split.c ft_atoi.c lst_new_node.c utils_swap.c \
 		ft_strjoin.c ft_ret_lst.c check_erro.c lst_add_back.c rotate_utils.c lst_add_front.c \
-		reverse_rotate_utils.c take_list.c ft_push.c lst_count.c sort_list.c sort_algo.c
+		reverse_rotate_utils.c take_list.c ft_push.c lst_count.c sort_list.c sort_algo.c indix.c
 
-OBJ = $(SRC:.c=.o)  
-NAME = push_swap.a
+OBJ = ${SRC:.c=.o}
+OBJ_BONUS = ${BSRC:.c=.o}
 
-all: $(NAME)
+all : $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o : %.c push_swap.h 
-	$(CC) $(CFLAGS) -c $< -o $@
+bonus : $(NAME_BONUS)
 
-clean:
-	rm -rf $(OBJ)
-	
-fclean: clean
-	rm -rf $(NAME)
+$(NAME_BONUS): $(OBJ_BONUS)
+				$(CC) $(CFLAGS) $^ -o $(NAME_BONUS)
 
-re: fclean all
+clean : 
+	rm -rf $(OBJ) $(OBJ_BONUS)
+
+fclean : clean
+	rm -rf $(NAME) $(NAME_BONUS)
+
+re : fclean all
