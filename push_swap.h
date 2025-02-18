@@ -58,9 +58,9 @@ void push_b(t_list **stack_a, t_list **stack_b);
 int lst_count(t_list *list);
 void sort_2_num(t_list **list);
 void sort_3_num(t_list **list);
-void sort_4_num(t_list **list, t_list *stack_b);
-void sort_5_num(t_list **list, t_list *stack_b);
-void radix_sort(t_list **stack_a, t_list *stack_b);
+void sort_4_num(t_list **list, t_list **stack_b);
+void sort_5_num(t_list **list, t_list **stack_b);
+void radix_sort(t_list **stack_a, t_list **stack_b);
 void assign_indices(t_list *stack);
 
 #endif

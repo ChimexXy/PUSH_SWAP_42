@@ -47,13 +47,13 @@ void sort_3_num(t_list **stack_a)
 		
 }
 
-void 	sort_4_num(t_list **stack_a, t_list *stack_b)
+void 	sort_4_num(t_list **stack_a, t_list **stack_b)
 {
 	if (is_sorted(*stack_a) == 1)
 		return;
-	push_b(stack_a, &stack_b);
+	push_b(stack_a, stack_b);
 	sort_3_num(stack_a);
-	push_a(stack_a, &stack_b);
+	push_a(stack_a, stack_b);
 	if(((*stack_a)->content > (*stack_a)->next->content) 
 		&& ((*stack_a)->content < (*stack_a)->next->next->content))
 		swap_a(stack_a);
@@ -69,13 +69,13 @@ void 	sort_4_num(t_list **stack_a, t_list *stack_b)
 	}
 }
 
-void sort_5_num(t_list **stack_a, t_list *stack_b)
+void sort_5_num(t_list **stack_a, t_list **stack_b)
 {
 	if(is_sorted(*stack_a) == 1)
 		return;
-	push_b(stack_a, &stack_b);
+	push_b(stack_a, stack_b);
 	sort_4_num(stack_a, stack_b);
-	push_a(stack_a, &stack_b);
+	push_a(stack_a, stack_b);
 	if(((*stack_a)->content > (*stack_a)->next->content) 
 		&& ((*stack_a)->content < (*stack_a)->next->next->content))
 		swap_a(stack_a);
@@ -85,11 +85,11 @@ void sort_5_num(t_list **stack_a, t_list *stack_b)
 		&& ((*stack_a)->content < (*stack_a)->next->next->next->content))
 	{
 		rotate_a(stack_a);
-		push_b(stack_a, &stack_b);
-		push_b(stack_a, &stack_b);
+		push_b(stack_a, stack_b);
+		push_b(stack_a, stack_b);
 		reverse_rotate_a(stack_a);
-		push_a(stack_a, &stack_b);
-		push_a(stack_a, &stack_b);
+		push_a(stack_a, stack_b);
+		push_a(stack_a, stack_b);
 	}
 	if (((*stack_a)->content > (*stack_a)->next->next->next->content)
 		&& ((*stack_a)->content < (*stack_a)->next->next->next->next->content))

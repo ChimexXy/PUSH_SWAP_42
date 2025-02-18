@@ -17,17 +17,17 @@ void take_list(t_list **stack_a)
 	t_list *stack_b;
 	int count;
 
-	stack_b = NULL;
+	stack_b = NULL;	
 	count = lst_count(*stack_a);
 	if(count == 2)
 		sort_2_num(stack_a);
 	if(count == 3)
 		sort_3_num(stack_a);
 	if(count == 4)
-		sort_4_num(stack_a, stack_b);
+		sort_4_num(stack_a, &stack_b);
 	if(count == 5)
-		sort_5_num(stack_a, stack_b);
-	else if (count > 5)
-		radix_sort(stack_a, stack_b);
+		sort_5_num(stack_a, &stack_b);
+	if (count > 5)
+		radix_sort(stack_a, &stack_b);
 	// printList(*stack_a);
 }
