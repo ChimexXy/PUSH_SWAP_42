@@ -55,7 +55,5 @@ int main(int ac, char *av[])
 		free(stack_a);
 		exit (1);
 	}
-	// rotate_a(&stack_a);
-	// printList(stack_a);
 	take_list(&stack_a);
 }
