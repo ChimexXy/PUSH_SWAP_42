@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 15:18:54 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/17 02:34:57 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/21 14:19:47 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,38 +62,11 @@ void sort_3_num(t_list **list);
 void sort_4_num(t_list **list, t_list **stack_b);
 void sort_5_num(t_list **list, t_list **stack_b);
 void radix_sort(t_list **stack_a, t_list **stack_b);
-void assign_indices(t_list *stack);;
-
-/////////////////////////////
-
-// void move_to_b(t_list **a, t_list **b);
-// int find_best_position_in_a(t_list *a, int number);
-// int find_best_position_in_b(t_list *b, int number);
-// // int find_index(t_list *stack, int number);
-// void rotate_to_top(t_list **stack, int index);
-// int find_min_index(t_list *a);
-// void move_back_to_a(t_list **a, t_list **b);
-// int calculate_moves(t_list *a, t_list *b, int index);
-// int find_best_move(t_list *a, t_list *b);
-// t_list *get_nth(t_list *stack, int n);
-
-//////////////////////////////////////////
-
-
-// // Chunk Sorting Functions
-// int	ft_sqrt(int nb);
-// void push_chunks_to_b(t_list **a, t_list **b);
-// // void push_chunks_to_b(t_list **a, t_list **b);
-// void move_back_to_a(t_list **a, t_list **b);
-// void chunk_sort(t_list **a, t_list **b);
-// int *lst_to_array(t_list *stack, int size);
-// // int find_median(t_list *stack, int size);
-// void quicksort(int *arr, int low, int high);
-// int partition(int *arr, int low, int high);
-// void swap(int *a, int *b);
-// void rotate_to_top(t_list **stack, int index);
-// int find_best_position_in_a(t_list *a, int number);
-// int find_min_index(t_list *a);
-
+void intializ_index(t_list **stack_a);
+void ft_swap(int *a, int *b);
+int *list_to_num(t_list *stack_a);
+int *sort_tab(t_list *stack_a);
+void intializ_index(t_list **stack_a);
+int is_sorted(t_list *node);
 
 #endif
