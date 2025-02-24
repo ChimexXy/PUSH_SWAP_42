@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:33:17 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/11 09:53:42 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/22 10:23:05 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void printList(t_list *head)
 		return;
     while (temp != NULL) 
 	{  
-		printf("-> %d \n", temp->content);
+		printf("content-> %d ,index -> %d \n", temp->content, temp->index);
         temp = temp->next; 
     }
 }

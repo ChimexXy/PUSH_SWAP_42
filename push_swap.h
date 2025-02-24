@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 15:18:54 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/21 14:19:47 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/02/23 21:48:57 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,10 @@ void sort_3_num(t_list **list);
 void sort_4_num(t_list **list, t_list **stack_b);
 void sort_5_num(t_list **list, t_list **stack_b);
 void radix_sort(t_list **stack_a, t_list **stack_b);
-void intializ_index(t_list **stack_a);
+void intializ_index(t_list *stack_a);
 void ft_swap(int *a, int *b);
 int *list_to_num(t_list *stack_a);
 int *sort_tab(t_list *stack_a);
-void intializ_index(t_list **stack_a);
 int is_sorted(t_list *node);
 
 #endif
