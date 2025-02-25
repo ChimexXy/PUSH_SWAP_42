@@ -12,6 +12,22 @@
 
 #include "push_swap.h"
 
+
+void lst_free(t_list *list)
+{
+	if(list == NULL)
+	{
+		free(list);
+		return;
+	}
+	t_list *tmp;
+    while (list) {
+        tmp = list;
+        list = list->next;
+        free(tmp);
+    }
+}
+
 void printList(t_list *head) 
 {
     t_list *temp = head; 
@@ -40,7 +56,12 @@ t_list *ft_all_use(int ac,char **str)
 	}
 	head = ft_ret_lst(s);
 	if(!ft_check(s) || !check_double(head))
+	{
+		free(s);
+		lst_free(head);
 		return 0;
+	}
+	free(s);
 	return (head);
 		
 }
@@ -52,8 +73,10 @@ int main(int ac, char *av[])
 	stack_a = ft_all_use(ac, av);
 	if(stack_a == 0)
 	{
-		free(stack_a);
+		lst_free(stack_a);
 		exit (1);
 	}
 	take_list(&stack_a);
+	lst_free(stack_a);
+	// system("leaks -g a.out");
 }

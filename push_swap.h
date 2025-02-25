@@ -67,5 +67,6 @@ void ft_swap(int *a, int *b);
 int *list_to_num(t_list *stack_a);
 int *sort_tab(t_list *stack_a);
 int is_sorted(t_list *node);
+void lst_free(t_list *list);
 
 #endif

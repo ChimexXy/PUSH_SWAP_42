@@ -12,6 +12,24 @@
 
 #include"push_swap.h"
 
+void free_double_pointer(char **array)
+{
+    int i = 0;
+
+    if (!array) // Check if it's already NULL
+        return;
+
+    while (array[i]) // Free each allocated string
+    {
+        free(array[i]);
+        i++;
+    }
+    
+    free(array); // Free the main array pointer
+    array = NULL; // Prevent dangling pointer
+}
+
+
 t_list *ft_ret_lst(char *str)
 {
 	int ind;
@@ -31,10 +49,12 @@ t_list *ft_ret_lst(char *str)
 		if(data > INT_MAX || data < INT_MIN)
 		{
 			write(2, "Error\n", 6);
+			free(ret);
 			return (0);
 		}
 		lst_add_back(&head, lst_new_node(data));
 		ind++;
 	}
+	free_double_pointer(ret);
 	return (head);
 }

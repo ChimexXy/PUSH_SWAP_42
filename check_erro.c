@@ -84,5 +84,6 @@ int check_double(t_list *head)
 		}
 		head = head->next;
 	}
+	lst_free(node);
 	return (1);
 }
