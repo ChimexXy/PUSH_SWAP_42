@@ -14,8 +14,11 @@
 
 int get_max_bits(t_list *stack)
 {
-    int max = lst_count(stack);
-    int bits = 0;
+    int max;
+    int bits;
+
+	max = lst_count(stack);
+	bits = 0;
     while ((max >> bits) != 0)
         bits++;
     return bits;

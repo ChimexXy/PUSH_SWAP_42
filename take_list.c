@@ -18,8 +18,8 @@ void take_list(t_list **stack_a)
 	int count;
 
 	stack_b = NULL;	
-	intializ_index(*stack_a);
 	count = lst_count(*stack_a);
+	intializ_index(*stack_a);
 	if(count == 2)
 		sort_2_num(stack_a);
 	if(count == 3)
