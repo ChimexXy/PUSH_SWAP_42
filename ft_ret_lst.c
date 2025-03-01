@@ -16,10 +16,11 @@ void free_double_pointer(char **array)
 {
     int i;
 
-    if (!array)
-        return;
+
 	i = 0;
 
+	if (!array)
+		return;
     while (array[i])
     {
         free(array[i]);

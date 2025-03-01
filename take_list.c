@@ -30,5 +30,5 @@ void take_list(t_list **stack_a)
 		sort_5_num(stack_a, &stack_b);
 	if (count > 5)
 		radix_sort(stack_a, &stack_b);
-	printList(*stack_a);
+	// printList(*stack_a);
 }

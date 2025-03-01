@@ -30,18 +30,18 @@ void lst_free(t_list *list)
     }
 }
 
-// void printList(t_list *head) 
-// {
-//     t_list *temp = head; 
+void printList(t_list *head) 
+{
+    t_list *temp = head; 
 
-// 	if(!head)
-// 		return;
-//     while (temp != NULL) 
-// 	{  
-// 		printf("content-> %d ,index -> %d \n", temp->content, temp->index);
-//         temp = temp->next; 
-//     }
-// }
+	if(!head)
+		return;
+    while (temp != NULL) 
+	{  
+		printf("content-> %d ,index -> %d \n", temp->content, temp->index);
+        temp = temp->next; 
+    }
+}
 
 t_list *ft_all_use(int ac,char **str)
 {
