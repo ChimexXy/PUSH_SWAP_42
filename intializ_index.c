@@ -21,33 +21,37 @@ void ft_swap(int *a, int *b)
 
 int *list_to_num(t_list *stack_a)
 {
-	t_list *tmp = stack_a;
-	int size = lst_count(stack_a);
-	int *tab = malloc(size * sizeof(int));
-	if (!tab)
-		return (NULL); // Handle allocation failure
-	int i = 0;
+	t_list *tmp;
+	int size;
+	int *tab;
+	int i;
 
+	tmp = stack_a;
+	size = lst_count(stack_a);
+	tab = malloc(size * sizeof(int));
+	i = 0;
+
+	if (!tab)
+		return (NULL);
 	while (tmp)
 	{
 		tab[i] = tmp->content;
 		tmp = tmp->next;
 		i++;
 	}
-	return tab;
+	return (tab);
 }
 
 int *sort_tab(t_list *stack_a)
 {
 	int *tab;
-	int i = 0;
+	int i;
 	int j;
-	int size = lst_count(stack_a);
+	int size;
 
+	i = 0;
+	size = lst_count(stack_a);
 	tab = list_to_num(stack_a);
-	if (!tab)
-		return (NULL);
-
 	while (i < size - 1)
 	{
 		j = i + 1;
@@ -59,7 +63,7 @@ int *sort_tab(t_list *stack_a)
 		}
 		i++;
 	}
-	return tab;
+	return (tab);
 }
 
 void intializ_index(t_list *stack_a)
@@ -67,13 +71,13 @@ void intializ_index(t_list *stack_a)
 	int i;
 	int *tab;
 	t_list *tmp;
-	int size = lst_count(stack_a);
+	int size;
 
+	size = lst_count(stack_a);
+	tmp = stack_a;
 	tab = sort_tab(stack_a);
 	if (!tab)
 		return;
-
-	tmp = stack_a;
 	while (tmp)
 	{
 		i = 0;

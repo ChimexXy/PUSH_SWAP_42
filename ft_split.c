@@ -52,12 +52,16 @@ char *ft_substr(char *str, int start, int end)
 
 char **ft_split(char *str)
 {
-	int i = 0;
-	int cnt = 0;
+	int i;
+	int cnt;
 	int start;
-	int len_word = ft_count_word(str);
-	char **ret = malloc((len_word + 1) * 8);
-	
+	int len_word;
+	char **ret;
+
+	i = 0;
+	cnt = 0;
+	len_word = ft_count_word(str);
+	ret = malloc((len_word + 1) * sizeof(char *));
 	while(cnt < len_word)
 	{
 		while(str[i] == 32)

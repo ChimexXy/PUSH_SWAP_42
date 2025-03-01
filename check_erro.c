@@ -33,7 +33,7 @@ int ft_is_space(char *str)
 	i = 0;
 	while(str[i] == 32 && str[i])
 	{
-		if(str[i + 1] != 32 && str[i + 1])
+		if (str[i + 1] != 32 && str[i + 1])
 			return (0);
 		i++;
 	}

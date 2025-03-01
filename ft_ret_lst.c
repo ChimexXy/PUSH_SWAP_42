@@ -14,19 +14,19 @@
 
 void free_double_pointer(char **array)
 {
-    int i = 0;
+    int i;
 
-    if (!array) // Check if it's already NULL
+    if (!array)
         return;
+	i = 0;
 
-    while (array[i]) // Free each allocated string
+    while (array[i])
     {
         free(array[i]);
         i++;
     }
-    
-    free(array); // Free the main array pointer
-    array = NULL; // Prevent dangling pointer
+    free(array); 
+    array = NULL;
 }
 
 

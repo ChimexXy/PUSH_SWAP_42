@@ -14,9 +14,13 @@
 
 long ft_atoi(char *str)
 {
-	long i = 0;
-	long res = 0;
-	long sig = 1;
+	long i;
+	long res;
+	long sig;
+
+	i = 0;
+	res = 0;
+	sig = 1;
 	if(str[i] == '-' || str[i] == '+')
 	{
 		if(str[i] == '-')
