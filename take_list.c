@@ -18,6 +18,7 @@ void take_list(t_list **stack_a)
 	int count;
 
 	stack_b = NULL;	
+	intializ_index(*stack_a);
 	count = lst_count(*stack_a);
 	if(count == 2)
 		sort_2_num(stack_a);
@@ -29,6 +30,5 @@ void take_list(t_list **stack_a)
 		sort_5_num(stack_a, &stack_b);
 	if (count > 5)
 		radix_sort(stack_a, &stack_b);
-	lst_free(stack_b);
 	printList(*stack_a);
 }

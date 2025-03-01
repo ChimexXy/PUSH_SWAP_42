@@ -88,5 +88,5 @@ void intializ_index(t_list *stack_a)
 		}
 		tmp = tmp->next;
 	}
-	free(tab); // Free memory after use
+	free(tab);
 }
