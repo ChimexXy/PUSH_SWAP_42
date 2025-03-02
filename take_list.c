@@ -20,13 +20,15 @@ void take_list(t_list **stack_a)
 	stack_b = NULL;	
 	count = lst_count(*stack_a);
 	intializ_index(*stack_a);
-	if(count == 2)
+	if (is_sorted(*stack_a))
+		return;
+	if (count == 2)
 		sort_2_num(stack_a);
-	if(count == 3)
+	if (count == 3)
 		sort_3_num(stack_a);
-	if(count == 4)
+	if (count == 4)
 		sort_4_num(stack_a, &stack_b);
-	if(count == 5)
+	if (count == 5)
 		sort_5_num(stack_a, &stack_b);
 	if (count > 5)
 		radix_sort(stack_a, &stack_b);

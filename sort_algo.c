@@ -35,7 +35,7 @@ void radix_sort(t_list **stack_a, t_list **stack_b)
     while (i < max_bits)    
     {
         size = lst_count(*stack_a);
-        while (size > 0)
+        while (size > 5)
         {
             if (((((*stack_a)->index >> i) & 1) == 0) && ((is_sorted(*stack_a)) == 0))
                 push_b(stack_a, stack_b);
@@ -45,7 +45,6 @@ void radix_sort(t_list **stack_a, t_list **stack_b)
         }
         while (*stack_b)
             push_a(stack_a, stack_b);
-        
         i++;
     }
 }

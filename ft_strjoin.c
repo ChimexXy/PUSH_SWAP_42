@@ -24,9 +24,9 @@ int ft_strlen(char *str)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	size_t	i;
-	size_t	j;
-	size_t	m;
+	int	i;
+	int	j;
+	int	m;
 	char	*ptr;
 
 	if (!s1 || !s2)

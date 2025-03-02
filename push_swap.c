@@ -43,7 +43,7 @@ void printList(t_list *head)
     }
 }
 
-t_list *ft_all_use(int ac,char **str)
+t_list *ft_all_use(int ac, char **str)
 {
 	int i;
 	char *s;
