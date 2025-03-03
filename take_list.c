@@ -12,12 +12,10 @@
 
 #include "push_swap.h"
 
-void take_list(t_list **stack_a)
+void push_swap(t_list **stack_a, t_list **stack_b)
 {
-	t_list *stack_b;
 	int count;
 
-	stack_b = NULL;	
 	count = lst_count(*stack_a);
 	intializ_index(*stack_a);
 	if (is_sorted(*stack_a))
@@ -27,10 +25,10 @@ void take_list(t_list **stack_a)
 	if (count == 3)
 		sort_3_num(stack_a);
 	if (count == 4)
-		sort_4_num(stack_a, &stack_b);
+		sort_4_num(stack_a, stack_b);
 	if (count == 5)
-		sort_5_num(stack_a, &stack_b);
+		sort_5_num(stack_a, stack_b);
 	if (count > 5)
-		radix_sort(stack_a, &stack_b);
+		radix_sort(stack_a, stack_b);
 	// printList(*stack_a);
 }

@@ -71,14 +71,16 @@ t_list *ft_all_use(int ac, char **str)
 int main(int ac, char *av[])
 {
 	t_list *stack_a;
+	t_list *stack_b;
 	
 	stack_a = ft_all_use(ac, av);
+	stack_b = NULL;
 	if(stack_a == 0)
 	{
 		lst_free(stack_a);
 		exit (1);
 	}
-	take_list(&stack_a);
+	push_swap(&stack_a, &stack_b);
 	lst_free(stack_a);
 	// system("leaks -g a.out");
 }
