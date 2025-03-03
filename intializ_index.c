@@ -6,31 +6,32 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:30:10 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/24 01:08:20 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/03 02:41:43 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
-	int c = *a;
+	int	c;
+
+	c = *a;
 	*a = *b;
 	*b = c;
 }
 
-int *list_to_num(t_list *stack_a)
+int	*list_to_num(t_list *stack_a)
 {
-	t_list *tmp;
-	int size;
-	int *tab;
-	int i;
+	t_list	*tmp;
+	int		size;
+	int		*tab;
+	int		i;
 
 	tmp = stack_a;
 	size = lst_count(stack_a);
 	tab = malloc(size * sizeof(int));
 	i = 0;
-
 	if (!tab)
 		return (NULL);
 	while (tmp)
@@ -42,12 +43,12 @@ int *list_to_num(t_list *stack_a)
 	return (tab);
 }
 
-int *sort_tab(t_list *stack_a)
+int	*sort_tab(t_list *stack_a)
 {
-	int *tab;
-	int i;
-	int j;
-	int size;
+	int	*tab;
+	int	i;
+	int	j;
+	int	size;
 
 	i = 0;
 	size = lst_count(stack_a);
@@ -66,18 +67,18 @@ int *sort_tab(t_list *stack_a)
 	return (tab);
 }
 
-void intializ_index(t_list *stack_a)
+void	intializ_index(t_list *stack_a)
 {
-	int i;
-	int *tab;
-	t_list *tmp;
-	int size;
+	int		i;
+	int		*tab;
+	t_list	*tmp;
+	int		size;
 
 	size = lst_count(stack_a);
 	tmp = stack_a;
 	tab = sort_tab(stack_a);
 	if (!tab)
-		return;
+		return ;
 	while (tmp)
 	{
 		i = 0;
@@ -86,7 +87,7 @@ void intializ_index(t_list *stack_a)
 			if (tmp->content == tab[i])
 			{
 				tmp->index = i;
-				break;
+				break ;
 			}
 			i++;
 		}

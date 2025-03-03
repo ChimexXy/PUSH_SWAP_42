@@ -5,22 +5,16 @@ SRC = push_swap.c ft_split.c ft_atoi.c lst_new_node.c swap_utils.c intializ_inde
 		reverse_rotate_utils.c take_list.c ft_push.c lst_count.c sort_list.c sort_algo.c 
 
 OBJ = ${SRC:.c=.o}
-OBJ_BONUS = ${BSRC:.c=.o}
 
 all : $(NAME)
 
 $(NAME): $(OBJ)
 		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-bonus : $(NAME_BONUS)
-
-$(NAME_BONUS): $(OBJ_BONUS)
-				$(CC) $(CFLAGS) $^ -o $(NAME_BONUS)
-
 clean : 
-	rm -rf $(OBJ) $(OBJ_BONUS)
+	rm -rf $(OBJ)
 
 fclean : clean
-	rm -rf $(NAME) $(NAME_BONUS)
+	rm -rf $(NAME)
 
 re : fclean all

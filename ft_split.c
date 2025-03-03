@@ -6,41 +6,41 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 19:02:26 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/07 18:17:25 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/03 00:47:52 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_count_word(char *str)
+int	ft_count_word(char *str)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
-	while(str[i] == 32)
+	while (str[i] == 32)
 		i++;
-	while(str[i])
+	while (str[i])
 	{
-		if(str[i] != 32 && str[i])
+		if (str[i] != 32 && str[i])
 			j++;
-		while(str[i] != 32 && str[i])
+		while (str[i] != 32 && str[i])
 			i++;
-		while(str[i] == 32 && str[i])
+		while (str[i] == 32 && str[i])
 			i++;
 	}
 	return (j);
 }
 
-char *ft_substr(char *str, int start, int end)
+char	*ft_substr(char *str, int start, int end)
 {
-	int j;
-	char *ret;
+	int		j;
+	char	*ret;
 
 	j = 0;
 	ret = malloc((end - start) + 1);
-	while(start < end)
+	while (start < end)
 	{
 		ret[j] = str[start];
 		start++;
@@ -50,24 +50,24 @@ char *ft_substr(char *str, int start, int end)
 	return (ret);
 }
 
-char **ft_split(char *str)
+char	**ft_split(char *str)
 {
-	int i;
-	int cnt;
-	int start;
-	int len_word;
-	char **ret;
+	int		i;
+	int		cnt;
+	int		start;
+	int		len_word;
+	char	**ret;
 
 	i = 0;
 	cnt = 0;
 	len_word = ft_count_word(str);
 	ret = malloc((len_word + 1) * sizeof(char *));
-	while(cnt < len_word)
+	while (cnt < len_word)
 	{
-		while(str[i] == 32)
+		while (str[i] == 32)
 			i++;
 		start = i;
-		while(str[i] != 32)
+		while (str[i] != 32)
 			i++;
 		ret[cnt] = ft_substr(str, start, i);
 		cnt++;

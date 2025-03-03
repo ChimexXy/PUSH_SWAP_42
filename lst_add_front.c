@@ -6,13 +6,13 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 23:02:04 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/17 01:47:37 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/03 00:51:01 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void lst_add_front(t_list **lst, t_list *new)
+void	lst_add_front(t_list **lst, t_list *new)
 {
 	if (!new || !lst)
 		return ;
@@ -23,5 +23,4 @@ void lst_add_front(t_list **lst, t_list *new)
 		new->next = *lst;
 		*lst = new;
 	}
-	
 }

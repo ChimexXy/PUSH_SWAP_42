@@ -6,15 +6,15 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 05:19:33 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/17 01:54:46 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/03 00:45:16 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void push_a(t_list **stack_a, t_list **stack_b)
+void	push_a(t_list **stack_a, t_list **stack_b)
 {
-	t_list *head;
+	t_list	*head;
 
 	head = *stack_b;
 	*stack_b = (*stack_b)->next;
@@ -23,9 +23,9 @@ void push_a(t_list **stack_a, t_list **stack_b)
 	write(1, "pa\n", 3);
 }
 
-void push_b(t_list **stack_a, t_list **stack_b)
+void	push_b(t_list **stack_a, t_list **stack_b)
 {
-	t_list *head;
+	t_list	*head;
 
 	head = *stack_a;
 	*stack_a = (*stack_a)->next;

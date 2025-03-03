@@ -6,27 +6,27 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 12:01:08 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/02/06 12:12:58 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/03 00:48:25 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 		i++;
 	return (i);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	int	i;
-	int	j;
-	int	m;
+	int		i;
+	int		j;
+	int		m;
 	char	*ptr;
 
 	if (!s1 || !s2)
