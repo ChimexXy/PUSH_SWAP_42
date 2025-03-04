@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:33:17 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/03 21:56:12 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/04 00:07:51 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_list	*ft_all_use(int ac, char **str)
 	t_list	*head;
 
 	i = 1;
-	s = "";
+	s = malloc(1);
 	while (i < ac)
 	{
 		s = ft_strjoin(s, str[i]);
@@ -71,4 +71,5 @@ int	main(int ac, char *av[])
 	}
 	push_swap(&stack_a, &stack_b);
 	lst_free(stack_a);
+	// system("leaks -q push_swap");
 }

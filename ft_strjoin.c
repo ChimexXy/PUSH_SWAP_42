@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 12:01:08 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/03 00:48:25 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/03 23:55:08 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ char	*ft_strjoin(char *s1, char *s2)
 		ptr[m++] = s2[j++];
 	ptr[m] = ' ';
 	ptr[m + 1] = '\0';
+	free(s1);
 	return (ptr);
 }

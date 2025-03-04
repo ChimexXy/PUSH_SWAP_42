@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 12:02:43 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/03 02:41:29 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/03 22:13:36 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ t_list	*ft_ret_lst(char *str)
 		if (data > INT_MAX || data < INT_MIN)
 		{
 			write(2, "Error\n", 6);
+			free_double_pointer(ret);
 			free(ret);
 			return (0);
 		}
