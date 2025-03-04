@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:33:17 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/04 00:07:51 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/04 02:51:15 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	lst_free(t_list *list)
 		free(tmp);
 	}
 }
-
-
 
 t_list	*ft_all_use(int ac, char **str)
 {
@@ -57,11 +55,11 @@ t_list	*ft_all_use(int ac, char **str)
 
 int	main(int ac, char *av[])
 {
-	if (ac < 1)
-		return (0);
 	t_list	*stack_a;
 	t_list	*stack_b;
-
+	
+	if (ac < 1)
+		return (0);
 	stack_a = ft_all_use(ac, av);
 	stack_b = NULL;
 	if (stack_a == 0)
@@ -71,5 +69,4 @@ int	main(int ac, char *av[])
 	}
 	push_swap(&stack_a, &stack_b);
 	lst_free(stack_a);
-	// system("leaks -q push_swap");
 }
