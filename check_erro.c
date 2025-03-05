@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 11:59:34 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/03 00:43:06 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/05 02:32:22 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,29 +26,12 @@ int	is_sign(char c, char c1)
 	return (0);
 }
 
-int	ft_is_space(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] == 32 && str[i])
-	{
-		if (str[i + 1] != 32 && str[i + 1])
-			return (0);
-		i++;
-	}
-	write(2, "Error\n", 6);
-	return (1);
-}
-
 int	ft_check(char *str)
 {
 	int	i;
 
 	i = 0;
 	if (!str[i])
-		return (0);
-	if (ft_is_space(str) == 1)
 		return (0);
 	while (str[i])
 	{
@@ -58,7 +41,7 @@ int	ft_check(char *str)
 			|| (is_digit(str[i]) && str[i + 1] == '+'))
 		{
 			write(2, "Error\n", 6);
-			exit (1);
+			return (0);
 		}
 		else
 			i++;

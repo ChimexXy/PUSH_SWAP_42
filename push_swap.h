@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 15:18:54 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/03 21:35:25 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/05 02:33:11 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int		is_digit(char c);
 int		is_sign(char c, char c1);
 int		ft_check(char *str);
 int		check_double(t_list *head);
+int		ft_check_32_0(char **av);
+int		check_av(char *s);
 
 //func_lib
 char	**ft_split(char *str);

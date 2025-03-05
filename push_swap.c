@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:33:17 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/04 02:51:15 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/05 02:37:55 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,55 @@ t_list	*ft_all_use(int ac, char **str)
 	{
 		free(s);
 		lst_free(head);
-		return (0);
+		exit (1);
 	}
 	free(s);
 	return (head);
 }
 
-int	main(int ac, char *av[])
+int	check_av(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] && s[i] == ' ')
+		i++;
+	if (s[i] == '\0')
+		return (0);
+	return (1);
+}
+
+int	ft_check_32_0(char **av)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	j = 0;
+	while (av[i])
+	{
+		if (check_av(av[i]) == 0)
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
+		i++;
+	}
+	return (1);
+}
+
+int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	
-	if (ac < 1)
+
+	if (ac <= 1)
+	{
+		write(2, "Error\n", 6);
 		return (0);
+	}
+	if (!ft_check_32_0(av))
+		exit (1);
 	stack_a = ft_all_use(ac, av);
 	stack_b = NULL;
 	if (stack_a == 0)
