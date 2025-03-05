@@ -6,11 +6,27 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 18:30:10 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/03 02:41:43 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/05 23:57:37 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int get_min(t_list *list)
+{
+	int min;
+	t_list *tmp;
+
+	tmp = list;
+	min = tmp->index;
+	while(tmp->next)
+	{
+		if (tmp->next->index < min)
+			min = tmp->next->index;
+		tmp = tmp->next;
+	}
+	return (min);
+}
 
 void	ft_swap(int *a, int *b)
 {

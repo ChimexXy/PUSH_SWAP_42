@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 15:18:54 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/05 02:33:11 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/05 23:56:28 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ t_list	*ft_ret_lst(char *str);
 // sort_num_2_3_4
 void	sort_2_num(t_list **list);
 void	sort_3_num(t_list **list);
-void	sort_4_num(t_list **list, t_list **stack_b);
+void	sort_4_num(t_list **stack_a, t_list **stack_b);
+void	sort_5_num(t_list **stack_a, t_list **stack_b);
 
 //helper
 void	intializ_index(t_list *stack_a);
@@ -82,6 +83,7 @@ int		*list_to_num(t_list *stack_a);
 int		*sort_tab(t_list *stack_a);
 int		is_sorted(t_list *node);
 void	free_double_pointer(char **array);
+int get_min(t_list *list);
 
 void	printList(t_list *head);
 #endif

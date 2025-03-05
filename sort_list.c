@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 05:57:14 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/05 03:15:16 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/05 23:57:05 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,39 +45,58 @@ void	sort_3_num(t_list **stack_a)
 
 }
 
-
-
-// {
-// 	if ((*stack_a)->content > (*stack_a)->next->content)
-// 		swap_a(stack_a);
-// 	if ((*stack_a)->next->content > (*stack_a)->next->next->content)
-// 	{
-// 		rotate_a(stack_a);
-// 		swap_a(stack_a);
-// 		reverse_rotate_a(stack_a);
-// 	}
-// 	if ((*stack_a)->content > (*stack_a)->next->content)
-// 		swap_a(stack_a);
-// }
-
 void	sort_4_num(t_list **stack_a, t_list **stack_b)
 {
-	if (is_sorted(*stack_a) == 1)
-		return ;
-	push_b(stack_a, stack_b);
-	sort_3_num(stack_a);
-	push_a(stack_a, stack_b);
-	if (((*stack_a)->content > (*stack_a)->next->content) 
-		&& ((*stack_a)->content < (*stack_a)->next->next->content))
+	int sev;
+
+	sev = get_min(*stack_a);
+	printf("%d\n", sev);
+	if ((*stack_a)->index == sev)
+		push_b(stack_a, stack_b);
+	else if ((*stack_a)->next->index == sev)
+	{
 		swap_a(stack_a);
-	if ((*stack_a)->content > (*stack_a)->next->next->next->content)
-		rotate_a(stack_a); 
-	if (((*stack_a)->content > (*stack_a)->next->next->content) 
-		&& ((*stack_a)->content < (*stack_a)->next->next->next->content))
+		push_b(stack_a, stack_b);
+	}
+	else if ((*stack_a)->next->next->index == sev)
 	{
 		reverse_rotate_a(stack_a);
-		swap_a(stack_a);
-		rotate_a(stack_a);
-		rotate_a(stack_a);
+		reverse_rotate_a(stack_a);
+		push_b(stack_a, stack_b);
 	}
+	else if ((*stack_a)->next->next->next->index == sev)
+	{
+		reverse_rotate_a(stack_a);
+		push_b(stack_a, stack_b);
+	}
+	sort_3_num(stack_a);
+	push_a(stack_a, stack_b);
 }
+
+void	sort_5_num(t_list **stack_a, t_list **stack_b)
+{
+	int sev;
+
+	sev = get_min(*stack_a);
+	if((*stack_a))
+	{
+		if ((*stack_a)->next->index == sev)
+			swap_a(stack_a);
+		else if ((*stack_a)->next->next->index == sev)
+		{
+			rotate_a(stack_a);
+			rotate_a(stack_a);
+		}
+		else if ((*stack_a)->next->next->next->index == sev)
+		{
+			reverse_rotate_a(stack_a);
+			reverse_rotate_a(stack_a);
+		}
+		else if ((*stack_a)->next->next->next->next->index == sev)
+			reverse_rotate_a(stack_a);
+		push_b(stack_a, stack_b);
+	}
+	sort_4_num(stack_a, stack_b);
+	push_a(stack_a, stack_b);
+}
+
