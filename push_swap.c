@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:33:17 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/05 02:37:55 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/05 02:47:26 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,8 @@ int	check_av(char *s)
 int	ft_check_32_0(char **av)
 {
 	int	i;
-	int	j;
 
 	i = 1;
-	j = 0;
 	while (av[i])
 	{
 		if (check_av(av[i]) == 0)
