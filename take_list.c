@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 05:28:12 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/03 21:45:37 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/05 03:16:24 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,18 @@ void	push_swap(t_list **stack_a, t_list **stack_b)
 		sort_4_num(stack_a, stack_b);
 	if (count > 4)
 		radix_sort(stack_a, stack_b);
+	printList(*stack_a);
 }
 
-// void	printList(t_list *head) 
-// {
-//     t_list *temp = head; 
+void	printList(t_list *head)
+{
+    t_list *temp = head; 
 
-// 	if(!head)
-// 		return;
-//     while (temp != NULL) 
-// 	{  
-// 		printf("content-> %d ,index -> %d \n", temp->content, temp->index);
-//         temp = temp->next; 
-//     }
-// }
+	if(!head)
+		return;
+    while (temp != NULL) 
+	{  
+		printf("content-> %d ,index -> %d \n", temp->content, temp->index);
+        temp = temp->next; 
+    }
+}

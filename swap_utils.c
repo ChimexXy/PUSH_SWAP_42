@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 21:16:32 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/03 00:55:51 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/05 03:32:04 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 void	swap_fun(t_list **list)
 {
-	t_list	*node;
-	int		tmp;
+	t_list	*tmp;
 
 	if (!list)
 		return ;
-	node = *list;
-	tmp = 0;
-	if (node && node->next)
+	// tmp = NULL;
+	if ((*list) && (*list)->next)
 	{
-		tmp = node->content;
-		node->content = node->next->content;
-		node->next->content = tmp;
+		tmp = (*list)->next;
+		(*list)->next = tmp->next;
+		tmp->next = (*list);
+		(*list) = tmp;
 	}
 	else
 		return ;

@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 05:57:14 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/03 21:35:48 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/05 03:15:16 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,31 @@ void	sort_2_num(t_list **stack_a)
 
 void	sort_3_num(t_list **stack_a)
 {
-	if ((*stack_a)->content > (*stack_a)->next->content)
-		swap_a(stack_a);
-	if ((*stack_a)->next->content > (*stack_a)->next->next->content)
-	{
+	if ((*stack_a)->content > (*stack_a)->next->content
+		&& (*stack_a)->content > (*stack_a)->next->next->content)
 		rotate_a(stack_a);
-		swap_a(stack_a);
+	if ((*stack_a)->content < (*stack_a)->next->content
+		&& (*stack_a)->next->content > (*stack_a)->next->next->content)
 		reverse_rotate_a(stack_a);
-	}
 	if ((*stack_a)->content > (*stack_a)->next->content)
 		swap_a(stack_a);
+
 }
+
+
+
+// {
+// 	if ((*stack_a)->content > (*stack_a)->next->content)
+// 		swap_a(stack_a);
+// 	if ((*stack_a)->next->content > (*stack_a)->next->next->content)
+// 	{
+// 		rotate_a(stack_a);
+// 		swap_a(stack_a);
+// 		reverse_rotate_a(stack_a);
+// 	}
+// 	if ((*stack_a)->content > (*stack_a)->next->content)
+// 		swap_a(stack_a);
+// }
 
 void	sort_4_num(t_list **stack_a, t_list **stack_b)
 {
