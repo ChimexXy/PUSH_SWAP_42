@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 05:57:14 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/05 23:59:52 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/06 00:11:38 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	sort_4_num(t_list **stack_a, t_list **stack_b)
 	int	sev;
 
 	sev = get_min(*stack_a);
-	printf("%d\n", sev);
 	if ((*stack_a)->index == sev)
 		push_b(stack_a, stack_b);
 	else if ((*stack_a)->next->index == sev)
