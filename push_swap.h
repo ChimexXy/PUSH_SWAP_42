@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 15:18:54 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/05 23:59:16 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/06 00:08:08 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,4 @@ int		is_sorted(t_list *node);
 void	free_double_pointer(char **array);
 int		get_min(t_list *list);
 
-// void	printList(t_list *head);
 #endif
