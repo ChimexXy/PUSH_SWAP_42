@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 15:18:54 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/06 00:08:08 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/06 22:27:40 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		check_av(char *s);
 char	**ft_split(char *str);
 char	*ft_substr(char *str, int start, int end);
 int		ft_count_word(char *str);
-long	ft_atoi(char *str);
+long	ft_atoi(char *str, int *val);
 int		ft_strlen(char *str);
 char	*ft_strjoin(char *s1, char *s2);
 void	ft_swap(int *a, int *b);
@@ -69,7 +69,7 @@ void	push_b(t_list **stack_a, t_list **stack_b);
 void	push_swap(t_list **stack_a, t_list **stack_b);
 void	radix_sort(t_list **stack_a, t_list **stack_b);
 t_list	*ft_all_use(int ac, char **str);
-t_list	*ft_ret_lst(char *str);
+t_list	*ft_ret_lst(char **ret);
 
 // sort_num_2_3_4
 void	sort_2_num(t_list **list);

@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:33:17 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/05 02:47:26 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/06 22:26:46 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ t_list	*ft_all_use(int ac, char **str)
 {
 	int		i;
 	char	*s;
+	char	**ptr;
 	t_list	*head;
 
 	i = 1;
@@ -42,7 +43,8 @@ t_list	*ft_all_use(int ac, char **str)
 		s = ft_strjoin(s, str[i]);
 		i++;
 	}
-	head = ft_ret_lst(s);
+	ptr = ft_split(s);
+	head = ft_ret_lst(ptr);
 	if (!ft_check(s) || !check_double(head))
 	{
 		free(s);
@@ -88,10 +90,7 @@ int	main(int ac, char **av)
 	t_list	*stack_b;
 
 	if (ac <= 1)
-	{
-		write(2, "Error\n", 6);
 		return (0);
-	}
 	if (!ft_check_32_0(av))
 		exit (1);
 	stack_a = ft_all_use(ac, av);

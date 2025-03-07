@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 12:02:43 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/05 03:05:41 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/06 22:27:11 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,25 @@ void	free_double_pointer(char **array)
 	array = NULL;
 }
 
-t_list	*ft_ret_lst(char *str)
+t_list	*ft_ret_lst(char **ret)
 {
 	int		ind;
 	long	data;
-	char	**ret;
+	int		val;
 	t_list	*head;
 
+	val = 0;
 	ind = 0;
 	data = 0;
-	ret = ft_split(str);
 	head = NULL;
 	while (ret[ind])
 	{
-		data = ft_atoi(ret[ind]);
-		if (data > INT_MAX || data < INT_MIN)
+		data = ft_atoi(ret[ind], &val);
+		if (val == 1)
 		{
 			write(2, "Error\n", 6);
 			free_double_pointer(ret);
 			lst_free(head);
-			free(str);
 			exit (1);
 		}
 		lst_add_back(&head, lst_new_node(data));
