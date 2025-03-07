@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:33:17 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/06 22:26:46 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/07 02:49:45 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_list	*ft_all_use(int ac, char **str)
 	}
 	ptr = ft_split(s);
 	head = ft_ret_lst(ptr);
-	if (!ft_check(s) || !check_double(head))
+	if (!head || !ft_check(s) || !check_double(head))
 	{
 		free(s);
 		lst_free(head);
@@ -84,11 +84,16 @@ int	ft_check_32_0(char **av)
 	return (1);
 }
 
+// void l()
+// {
+// 	system("leaks  push_swap");
+// }
 int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
 
+	// atexit(l);
 	if (ac <= 1)
 		return (0);
 	if (!ft_check_32_0(av))

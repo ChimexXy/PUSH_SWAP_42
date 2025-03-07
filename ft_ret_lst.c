@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 12:02:43 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/06 22:27:11 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/07 02:48:11 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_list	*ft_ret_lst(char **ret)
 			write(2, "Error\n", 6);
 			free_double_pointer(ret);
 			lst_free(head);
-			exit (1);
+			return (NULL);
 		}
 		lst_add_back(&head, lst_new_node(data));
 		ind++;
