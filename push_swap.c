@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:33:17 by mozahnou          #+#    #+#             */
-/*   Updated: 2025/03/07 02:49:45 by mozahnou         ###   ########.fr       */
+/*   Updated: 2025/03/08 17:37:55 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,16 +84,11 @@ int	ft_check_32_0(char **av)
 	return (1);
 }
 
-// void l()
-// {
-// 	system("leaks  push_swap");
-// }
 int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
 
-	// atexit(l);
 	if (ac <= 1)
 		return (0);
 	if (!ft_check_32_0(av))
