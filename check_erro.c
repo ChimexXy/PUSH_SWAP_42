@@ -21,7 +21,8 @@ int	is_digit(char c)
 
 int	is_sign(char c, char c1)
 {
-	if ((c == '-' && c1 != '-') || (c == '+' && c1 != '+'))
+	if ((c == '-' && c1 != '-') || (c == '+' && c1 != '+')
+		|| (c == '+' && c1 != '-') || (c == '-' && c1 != '+'))
 		return (1);
 	return (0);
 }
@@ -35,6 +36,12 @@ int	ft_check(char *str)
 		return (0);
 	while (str[i])
 	{
+		if ((str[i] == '+' && str[i + 1] == '-') 
+			|| (str[i] == '-' && str[i + 1] == '+'))
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
 		if (str[i] == 32 || is_sign(str[i], str[i + 1]))
 			i++;
 		else if (!is_digit(str[i]) || (is_digit(str[i]) && str[i + 1] == '-')
