@@ -7,9 +7,9 @@ SRC = push_swap.c ft_split.c ft_atoi.c lst_new_node.c swap_utils.c intializ_inde
 
 OBJ = ${SRC:.c=.o}
 
-all : $(NAME) push_swap.h
+all : $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME) : $(OBJ) push_swap.h
 		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean : 
