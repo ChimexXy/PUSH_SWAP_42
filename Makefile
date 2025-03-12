@@ -1,3 +1,4 @@
+CC = cc
 NAME = push_swap
 CFLAGS = -Wall -Wextra -Werror
 SRC = push_swap.c ft_split.c ft_atoi.c lst_new_node.c swap_utils.c intializ_index.c \
